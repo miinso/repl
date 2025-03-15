@@ -13,13 +13,7 @@
   "exports": {
     ".": {
       "types": "./dist/vue-repl.d.ts",
-      "import": "./dist/vue-repl.js",
-      "require": "./dist/ssr-stub.js"
-    },
-    "./monaco-editor": {
-      "types": "./dist/monaco-editor.d.ts",
-      "import": "./dist/monaco-editor.js",
-      "require": null
+      "import": "./dist/vue-repl.js"
     },
     "./codemirror-editor": {
       "types": "./dist/codemirror-editor.d.ts",
@@ -82,14 +76,12 @@
     "@jridgewell/gen-mapping": "^0.3.12",
     "@jridgewell/trace-mapping": "^0.3.29",
     "@rollup/plugin-replace": "^6.0.2",
-    "@shikijs/monaco": "^3.9.2",
     "@types/babel__standalone": "^7.1.9",
     "@types/codemirror": "^5.60.16",
     "@types/hash-sum": "^1.0.2",
     "@types/node": "^24.2.0",
     "@vitejs/plugin-vue": "^6.0.1",
     "@volar/jsdelivr": "2.4.23",
-    "@volar/monaco": "2.4.23",
     "@volar/typescript": "2.4.23",
     "@vue/babel-plugin-jsx": "^1.4.0",
     "@vue/language-core": "3.0.8",
@@ -104,7 +96,6 @@
     "fflate": "^0.8.2",
     "hash-sum": "^2.0.0",
     "lint-staged": "^16.1.4",
-    "monaco-editor-core": "^0.52.2",
     "prettier": "^3.6.2",
     "shiki": "^3.9.2",
     "simple-git-hooks": "^2.13.1",
