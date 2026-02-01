@@ -1,6 +1,6 @@
-import { defineComponent, useTemplateRef, inject, onMounted, watchEffect, watch, onWatcherCleanup, createElementBlock, openBlock, withKeys, withModifiers, computed, createBlock } from 'vue';
+import { defineComponent, useTemplateRef, inject, onMounted, watchEffect, watch, onWatcherCleanup, openBlock, createElementBlock, withKeys, withModifiers, computed, createBlock } from 'vue';
 
-const injectKeyProps = Symbol("props");
+const injectKeyProps = /* @__PURE__ */ Symbol("props");
 
 function debounce(fn, n = 100) {
   let handle;
@@ -25,7 +25,7 @@ var hasRequiredCodemirror;
 function requireCodemirror () {
 	if (hasRequiredCodemirror) return codemirror$1.exports;
 	hasRequiredCodemirror = 1;
-	(function (module, exports) {
+	(function (module, exports$1) {
 		// CodeMirror, copyright (c) by Marijn Haverbeke and others
 		// Distributed under an MIT license: https://codemirror.net/5/LICENSE
 
@@ -9921,7 +9921,7 @@ var hasRequiredClike;
 function requireClike () {
 	if (hasRequiredClike) return clike.exports;
 	hasRequiredClike = 1;
-	(function (module, exports) {
+	(function (module, exports$1) {
 		// CodeMirror, copyright (c) by Marijn Haverbeke and others
 		// Distributed under an MIT license: https://codemirror.net/5/LICENSE
 
@@ -10871,7 +10871,7 @@ var hasRequiredJavascript;
 function requireJavascript () {
 	if (hasRequiredJavascript) return javascript.exports;
 	hasRequiredJavascript = 1;
-	(function (module, exports) {
+	(function (module, exports$1) {
 		// CodeMirror, copyright (c) by Marijn Haverbeke and others
 		// Distributed under an MIT license: https://codemirror.net/5/LICENSE
 
@@ -11838,7 +11838,7 @@ var hasRequiredCss;
 function requireCss () {
 	if (hasRequiredCss) return css.exports;
 	hasRequiredCss = 1;
-	(function (module, exports) {
+	(function (module, exports$1) {
 		// CodeMirror, copyright (c) by Marijn Haverbeke and others
 		// Distributed under an MIT license: https://codemirror.net/5/LICENSE
 
@@ -12710,7 +12710,7 @@ var hasRequiredXml;
 function requireXml () {
 	if (hasRequiredXml) return xml.exports;
 	hasRequiredXml = 1;
-	(function (module, exports) {
+	(function (module, exports$1) {
 		// CodeMirror, copyright (c) by Marijn Haverbeke and others
 		// Distributed under an MIT license: https://codemirror.net/5/LICENSE
 
@@ -13131,7 +13131,7 @@ var hasRequiredHtmlmixed;
 function requireHtmlmixed () {
 	if (hasRequiredHtmlmixed) return htmlmixed.exports;
 	hasRequiredHtmlmixed = 1;
-	(function (module, exports) {
+	(function (module, exports$1) {
 		// CodeMirror, copyright (c) by Marijn Haverbeke and others
 		// Distributed under an MIT license: https://codemirror.net/5/LICENSE
 
@@ -13291,7 +13291,7 @@ var hasRequiredClosebrackets;
 function requireClosebrackets () {
 	if (hasRequiredClosebrackets) return closebrackets.exports;
 	hasRequiredClosebrackets = 1;
-	(function (module, exports) {
+	(function (module, exports$1) {
 		// CodeMirror, copyright (c) by Marijn Haverbeke and others
 		// Distributed under an MIT license: https://codemirror.net/5/LICENSE
 
@@ -13503,7 +13503,7 @@ var hasRequiredXmlFold;
 function requireXmlFold () {
 	if (hasRequiredXmlFold) return xmlFold.exports;
 	hasRequiredXmlFold = 1;
-	(function (module, exports) {
+	(function (module, exports$1) {
 		// CodeMirror, copyright (c) by Marijn Haverbeke and others
 		// Distributed under an MIT license: https://codemirror.net/5/LICENSE
 
@@ -13691,7 +13691,7 @@ var hasRequiredClosetag;
 function requireClosetag () {
 	if (hasRequiredClosetag) return closetag.exports;
 	hasRequiredClosetag = 1;
-	(function (module, exports) {
+	(function (module, exports$1) {
 		// CodeMirror, copyright (c) by Marijn Haverbeke and others
 		// Distributed under an MIT license: https://codemirror.net/5/LICENSE
 
@@ -13885,7 +13885,7 @@ var hasRequiredComment;
 function requireComment () {
 	if (hasRequiredComment) return comment.exports;
 	hasRequiredComment = 1;
-	(function (module, exports) {
+	(function (module, exports$1) {
 		// CodeMirror, copyright (c) by Marijn Haverbeke and others
 		// Distributed under an MIT license: https://codemirror.net/5/LICENSE
 
@@ -14104,7 +14104,7 @@ var hasRequiredFoldcode;
 function requireFoldcode () {
 	if (hasRequiredFoldcode) return foldcode.exports;
 	hasRequiredFoldcode = 1;
-	(function (module, exports) {
+	(function (module, exports$1) {
 		// CodeMirror, copyright (c) by Marijn Haverbeke and others
 		// Distributed under an MIT license: https://codemirror.net/5/LICENSE
 
@@ -14271,7 +14271,7 @@ var hasRequiredFoldgutter;
 function requireFoldgutter () {
 	if (hasRequiredFoldgutter) return foldgutter.exports;
 	hasRequiredFoldgutter = 1;
-	(function (module, exports) {
+	(function (module, exports$1) {
 		// CodeMirror, copyright (c) by Marijn Haverbeke and others
 		// Distributed under an MIT license: https://codemirror.net/5/LICENSE
 
@@ -14448,7 +14448,7 @@ var hasRequiredBraceFold;
 function requireBraceFold () {
 	if (hasRequiredBraceFold) return braceFold.exports;
 	hasRequiredBraceFold = 1;
-	(function (module, exports) {
+	(function (module, exports$1) {
 		// CodeMirror, copyright (c) by Marijn Haverbeke and others
 		// Distributed under an MIT license: https://codemirror.net/5/LICENSE
 
@@ -14575,7 +14575,7 @@ var hasRequiredIndentFold;
 function requireIndentFold () {
 	if (hasRequiredIndentFold) return indentFold.exports;
 	hasRequiredIndentFold = 1;
-	(function (module, exports) {
+	(function (module, exports$1) {
 		// CodeMirror, copyright (c) by Marijn Haverbeke and others
 		// Distributed under an MIT license: https://codemirror.net/5/LICENSE
 
@@ -14630,7 +14630,7 @@ var hasRequiredCommentFold;
 function requireCommentFold () {
 	if (hasRequiredCommentFold) return commentFold.exports;
 	hasRequiredCommentFold = 1;
-	(function (module, exports) {
+	(function (module, exports$1) {
 		// CodeMirror, copyright (c) by Marijn Haverbeke and others
 		// Distributed under an MIT license: https://codemirror.net/5/LICENSE
 
@@ -14699,7 +14699,7 @@ var hasRequiredSearchcursor;
 function requireSearchcursor () {
 	if (hasRequiredSearchcursor) return searchcursor.exports;
 	hasRequiredSearchcursor = 1;
-	(function (module, exports) {
+	(function (module, exports$1) {
 		// CodeMirror, copyright (c) by Marijn Haverbeke and others
 		// Distributed under an MIT license: https://codemirror.net/5/LICENSE
 
@@ -15010,7 +15010,7 @@ var hasRequiredDialog;
 function requireDialog () {
 	if (hasRequiredDialog) return dialog.exports;
 	hasRequiredDialog = 1;
-	(function (module, exports) {
+	(function (module, exports$1) {
 		// CodeMirror, copyright (c) by Marijn Haverbeke and others
 		// Distributed under an MIT license: https://codemirror.net/5/LICENSE
 
@@ -15178,7 +15178,7 @@ var hasRequiredSearch;
 function requireSearch () {
 	if (hasRequiredSearch) return search.exports;
 	hasRequiredSearch = 1;
-	(function (module, exports) {
+	(function (module, exports$1) {
 		// CodeMirror, copyright (c) by Marijn Haverbeke and others
 		// Distributed under an MIT license: https://codemirror.net/5/LICENSE
 
@@ -15487,7 +15487,7 @@ var hasRequiredMatchbrackets;
 function requireMatchbrackets () {
 	if (hasRequiredMatchbrackets) return matchbrackets.exports;
 	hasRequiredMatchbrackets = 1;
-	(function (module, exports) {
+	(function (module, exports$1) {
 		// CodeMirror, copyright (c) by Marijn Haverbeke and others
 		// Distributed under an MIT license: https://codemirror.net/5/LICENSE
 
@@ -15652,7 +15652,7 @@ var hasRequiredSublime;
 function requireSublime () {
 	if (hasRequiredSublime) return sublime.exports;
 	hasRequiredSublime = 1;
-	(function (module, exports) {
+	(function (module, exports$1) {
 		// CodeMirror, copyright (c) by Marijn Haverbeke and others
 		// Distributed under an MIT license: https://codemirror.net/5/LICENSE
 
@@ -16497,9 +16497,9 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     });
     return (_ctx, _cache) => {
       return openBlock(), createBlock(_sfc_main$1, {
-        value: _ctx.value,
+        value: __props.value,
         mode: activeMode.value,
-        readonly: _ctx.readonly,
+        readonly: __props.readonly,
         onChange
       }, null, 8, ["value", "mode", "readonly"]);
     };

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { type Store, useStore } from './store'
+import { File, type Store, useStore } from './store'
 import { provide, toRefs } from 'vue'
 import { injectKeyProps } from './types'
 import EditorContainer from './editor/EditorContainer.vue'
@@ -29,10 +29,10 @@ const props = withDefaults(defineProps<Props>(), {
 // Initialize store with a simple text file
 if (props.initialValue && props.filename) {
   if (!props.store.files[props.filename]) {
-    props.store.files[props.filename] = {
-      filename: props.filename,
-      code: props.initialValue,
-    }
+    props.store.files[props.filename] = new File(
+      props.filename,
+      props.initialValue,
+    )
   }
   props.store.activeFilename = props.filename
 }

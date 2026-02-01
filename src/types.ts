@@ -1,4 +1,4 @@
-import type { ComputedRef, InjectionKey, ToRefs } from 'vue'
+import type { InjectionKey, ToRefs } from 'vue'
 import { Props } from './Repl.vue'
 
 export type EditorMode = 'js' | 'css' | null

@@ -1,4 +1,4 @@
-import { type ToRefs, type UnwrapRef, computed, reactive, ref } from 'vue'
+import { type Ref, computed, reactive, ref } from 'vue'
 
 export class File {
   editorViewState: any = null
@@ -38,7 +38,12 @@ export class File {
 }
 
 export function useStore(
-  { files = ref(Object.create(null)), activeFilename = ref('text.txt') } = {},
+  {
+    files = ref<Record<string, File>>(
+      Object.create(null) as Record<string, File>,
+    ),
+    activeFilename = ref<string>('text.txt'),
+  }: { files?: Ref<Record<string, File>>; activeFilename?: Ref<string> } = {},
   serializedState?: string,
 ) {
   // Initialize with a default file if no files exist
@@ -121,7 +126,7 @@ export function useStore(
     }
 
     // Clear existing files
-    files.value = Object.create(null)
+    files.value = Object.create(null) as Record<string, File>
 
     // Set files from saved state
     for (const [filename, content] of Object.entries(saved)) {

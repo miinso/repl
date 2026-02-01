@@ -12,12 +12,12 @@ export { File_2 as File }
 
 export declare type Store = ReturnType<typeof useStore>;
 
-export declare function useStore({ files, activeFilename }?: {
-    files?: Ref<any, any> | undefined;
-    activeFilename?: Ref<string, string> | undefined;
+export declare function useStore({ files, activeFilename, }?: {
+    files?: Ref<Record<string, File_2>>;
+    activeFilename?: Ref<string>;
 }, serializedState?: string): {
-    files: any;
-    activeFile: any;
+    files: Record<string, File_2>;
+    activeFile: File_2;
     activeFilename: string;
     init: () => void;
     setActive: (filename: string) => void;

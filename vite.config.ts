@@ -25,11 +25,23 @@ const patchCssFiles: Plugin = {
   writeBundle() {
     //  inject css imports to the files
     const outDir = path.resolve('dist')
+    const cssImports: Record<string, string[]> = {
+      'vue-repl': ['vue-repl.css', 'CodeMirrorEditor.css'],
+      'codemirror-editor': ['CodeMirrorEditor.css'],
+    }
     ;['vue-repl', 'codemirror-editor'].forEach((file) => {
       const filePath = path.resolve(outDir, file + '.js')
       const content = fs.readFileSync(filePath, 'utf-8')
-      fs.writeFileSync(filePath, `import './${file}.css'\n${content}`)
+      const imports = cssImports[file]
+        .map((cssFile) => `import './${cssFile}'`)
+        .join('\n')
+      fs.writeFileSync(filePath, `${imports}\n${content}`)
     })
+    const stylePath = path.resolve(outDir, 'style.css')
+    fs.writeFileSync(
+      stylePath,
+      "@import './vue-repl.css';\n@import './CodeMirrorEditor.css';\n",
+    )
   },
 }
 

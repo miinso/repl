@@ -1,4 +1,4 @@
-import { computed, ref, reactive } from 'vue';
+import { computed, reactive, ref } from 'vue';
 
 class File {
   constructor(filename, code = "", hidden = false) {
@@ -34,7 +34,12 @@ class File {
     }
   }
 }
-function useStore({ files = ref(/* @__PURE__ */ Object.create(null)), activeFilename = ref("text.txt") } = {}, serializedState) {
+function useStore({
+  files = ref(
+    /* @__PURE__ */ Object.create(null)
+  ),
+  activeFilename = ref("text.txt")
+} = {}, serializedState) {
   function setDefaultFile() {
     setFile(files.value, activeFilename.value, "");
   }

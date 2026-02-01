@@ -121,12 +121,12 @@
   color: white;
 }
 
-.editor-container[data-v-db01c992] {
+.editor-container[data-v-e6b34164] {
   height: calc(100% - var(--header-height));
   overflow: hidden;
   position: relative;
 }
-.editor-floating[data-v-db01c992] {
+.editor-floating[data-v-e6b34164] {
   position: absolute;
   bottom: 16px;
   right: 16px;

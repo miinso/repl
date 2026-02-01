@@ -21,7 +21,7 @@ declare class File_2 {
 export { File_2 as File }
 
 export declare const Repl: DefineComponent<__VLS_PublicProps, {
-getValue: () => any;
+getValue: () => string;
 setValue: (code: string) => void;
 }, {}, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
 "update:modelValue": (value: boolean) => any;
@@ -51,12 +51,12 @@ export declare interface ReplProps {
 
 export declare type Store = ReturnType<typeof useStore>;
 
-export declare function useStore({ files, activeFilename }?: {
-    files?: Ref<any, any> | undefined;
-    activeFilename?: Ref<string, string> | undefined;
+export declare function useStore({ files, activeFilename, }?: {
+    files?: Ref<Record<string, File_2>>;
+    activeFilename?: Ref<string>;
 }, serializedState?: string): {
-    files: any;
-    activeFile: any;
+    files: Record<string, File_2>;
+    activeFile: File_2;
     activeFilename: string;
     init: () => void;
     setActive: (filename: string) => void;

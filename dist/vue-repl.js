@@ -1,8 +1,8 @@
 import './vue-repl.css'
-import { defineComponent, inject, ref, computed, useTemplateRef, createElementBlock, openBlock, createElementVNode, Fragment, renderList, createCommentVNode, unref, normalizeClass, toDisplayString, withModifiers, withDirectives, withKeys, vModelText, mergeModels, useModel, watch, createVNode, createBlock, isRef, provide, toRefs } from 'vue';
-import { u as useStore } from './chunks/store-BQHVGsK_.js';
-export { F as File } from './chunks/store-BQHVGsK_.js';
-import { i as injectKeyProps, d as debounce, _ as _sfc_main$4 } from './chunks/CodeMirrorEditor.vue_vue_type_script_setup_true_lang-CII_ydpq.js';
+import './CodeMirrorEditor.css'
+import { defineComponent, inject, ref, computed, useTemplateRef, openBlock, createElementBlock, Fragment, renderList, unref, normalizeClass, createElementVNode, toDisplayString, withModifiers, createCommentVNode, withDirectives, withKeys, vModelText, useModel, mergeModels, watch, createVNode, createBlock, isRef, provide, toRefs } from 'vue';
+import { F as File, u as useStore } from './chunks/store-CR2D_TQ8.js';
+import { i as injectKeyProps, _ as _sfc_main$4, d as debounce } from './chunks/CodeMirrorEditor.vue_vue_type_script_setup_true_lang-DeU1xQ6J.js';
 
 const _hoisted_1$1 = ["onClick", "onDblclick"];
 const _hoisted_2$1 = { class: "label" };
@@ -101,7 +101,7 @@ const _sfc_main$3 = /* @__PURE__ */ defineComponent({
               createElementVNode("span", {
                 class: "remove",
                 onClick: withModifiers(($event) => unref(store).deleteFile(file), ["stop"])
-              }, _cache[1] || (_cache[1] = [
+              }, [..._cache[1] || (_cache[1] = [
                 createElementVNode("svg", {
                   class: "icon",
                   width: "12",
@@ -123,7 +123,7 @@ const _sfc_main$3 = /* @__PURE__ */ defineComponent({
                     y2: "18"
                   })
                 ], -1)
-              ]), 8, _hoisted_3)
+              ])], 8, _hoisted_3)
             ], 42, _hoisted_1$1)) : createCommentVNode("", true),
             pending.value === true && i === files.value.length - 1 || pending.value === file ? (openBlock(), createElementBlock("div", {
               key: 1,
@@ -180,12 +180,12 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
         class: "wrapper",
         onClick: _cache[0] || (_cache[0] = ($event) => active.value = !active.value)
       }, [
-        createElementVNode("span", null, toDisplayString(_ctx.text), 1),
+        createElementVNode("span", null, toDisplayString(__props.text), 1),
         createElementVNode("div", {
           class: normalizeClass(["toggle", [{ active: __props.modelValue }]])
-        }, _cache[1] || (_cache[1] = [
+        }, [..._cache[1] || (_cache[1] = [
           createElementVNode("div", { class: "indicator" }, null, -1)
-        ]), 2)
+        ])], 2)
       ]);
     };
   }
@@ -198,11 +198,7 @@ const _hoisted_2 = { class: "editor-floating" };
 const SHOW_ERROR_KEY = "repl_show_error";
 const _sfc_main$1 = /* @__PURE__ */ defineComponent({
   __name: "EditorContainer",
-  props: {
-    editorComponent: {}
-  },
   setup(__props) {
-    const props = __props;
     const { store, autoSave, editorOptions } = inject(injectKeyProps);
     const showMessage = ref(getItem());
     const onChange = debounce((code) => {
@@ -222,7 +218,7 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
       return openBlock(), createElementBlock(Fragment, null, [
         createVNode(FileSelector),
         createElementVNode("div", _hoisted_1, [
-          createVNode(props.editorComponent, {
+          createVNode(_sfc_main$4, {
             value: unref(store).activeFile.code,
             filename: unref(store).activeFile.filename,
             onChange: unref(onChange)
@@ -241,7 +237,7 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
   }
 });
 
-const EditorContainer = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-db01c992"]]);
+const EditorContainer = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-e6b34164"]]);
 
 const _sfc_main = /* @__PURE__ */ defineComponent({
   __name: "Repl",
@@ -262,10 +258,10 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     const props = __props;
     if (props.initialValue && props.filename) {
       if (!props.store.files[props.filename]) {
-        props.store.files[props.filename] = {
-          filename: props.filename,
-          code: props.initialValue
-        };
+        props.store.files[props.filename] = new File(
+          props.filename,
+          props.initialValue
+        );
       }
       props.store.activeFilename = props.filename;
     }
@@ -281,12 +277,12 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     __expose({ getValue, setValue });
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", {
-        class: normalizeClass(["vue-repl", { dark: _ctx.theme === "dark" }])
+        class: normalizeClass(["vue-repl", { dark: __props.theme === "dark" }])
       }, [
-        createVNode(EditorContainer, { "editor-component": _sfc_main$4 })
+        createVNode(EditorContainer)
       ], 2);
     };
   }
 });
 
-export { _sfc_main as Repl, useStore };
+export { File, _sfc_main as Repl, useStore };
