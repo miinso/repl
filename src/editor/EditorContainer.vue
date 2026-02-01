@@ -4,13 +4,10 @@ import Message from '../Message.vue'
 import { debounce } from '../utils'
 import { inject, ref, watch } from 'vue'
 import ToggleButton from './ToggleButton.vue'
-import { type EditorComponentType, injectKeyProps } from '../types'
+import { injectKeyProps } from '../types'
+import CodeMirrorEditor from './CodeMirrorEditor.vue'
 
 const SHOW_ERROR_KEY = 'repl_show_error'
-
-const props = defineProps<{
-  editorComponent: EditorComponentType
-}>()
 
 const { store, autoSave, editorOptions } = inject(injectKeyProps)!
 const showMessage = ref(getItem())
@@ -36,7 +33,7 @@ watch(showMessage, () => {
 <template>
   <FileSelector />
   <div class="editor-container">
-    <props.editorComponent
+    <CodeMirrorEditor
       :value="store.activeFile.code"
       :filename="store.activeFile.filename"
       @change="onChange"
