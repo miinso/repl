@@ -2,7 +2,7 @@ import './vue-repl.css'
 import './CodeMirrorEditor.css'
 import { defineComponent, inject, ref, computed, useTemplateRef, openBlock, createElementBlock, Fragment, renderList, unref, normalizeClass, createElementVNode, toDisplayString, withModifiers, createCommentVNode, withDirectives, withKeys, vModelText, useModel, mergeModels, watch, createVNode, createBlock, isRef, provide, toRefs } from 'vue';
 import { F as File, u as useStore } from './chunks/store-CR2D_TQ8.js';
-import { i as injectKeyProps, _ as _sfc_main$4, d as debounce } from './chunks/CodeMirrorEditor.vue_vue_type_script_setup_true_lang-DeU1xQ6J.js';
+import { i as injectKeyProps, _ as _sfc_main$4 } from './chunks/CodeMirrorEditor.vue_vue_type_script_setup_true_lang-BP2bCexd.js';
 
 const _hoisted_1$1 = ["onClick", "onDblclick"];
 const _hoisted_2$1 = { class: "label" };
@@ -201,9 +201,9 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
   setup(__props) {
     const { store, autoSave, editorOptions } = inject(injectKeyProps);
     const showMessage = ref(getItem());
-    const onChange = debounce((code) => {
+    const onChange = (code) => {
       store.value.activeFile.code = code;
-    }, 250);
+    };
     function setItem() {
       localStorage.setItem(SHOW_ERROR_KEY, showMessage.value ? "true" : "false");
     }
@@ -221,8 +221,8 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
           createVNode(_sfc_main$4, {
             value: unref(store).activeFile.code,
             filename: unref(store).activeFile.filename,
-            onChange: unref(onChange)
-          }, null, 8, ["value", "filename", "onChange"]),
+            onChange
+          }, null, 8, ["value", "filename"]),
           createElementVNode("div", _hoisted_2, [
             unref(editorOptions)?.autoSaveText !== false ? (openBlock(), createBlock(ToggleButton, {
               key: 0,
@@ -237,7 +237,7 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
   }
 });
 
-const EditorContainer = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-e6b34164"]]);
+const EditorContainer = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-3593e9b0"]]);
 
 const _sfc_main = /* @__PURE__ */ defineComponent({
   __name: "Repl",

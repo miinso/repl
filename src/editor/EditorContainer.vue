@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import FileSelector from './FileSelector.vue'
-import { debounce } from '../utils'
 import { inject, ref, watch } from 'vue'
 import ToggleButton from './ToggleButton.vue'
 import { injectKeyProps } from '../types'
@@ -11,9 +10,9 @@ const SHOW_ERROR_KEY = 'repl_show_error'
 const { store, autoSave, editorOptions } = inject(injectKeyProps)!
 const showMessage = ref(getItem())
 
-const onChange = debounce((code: string) => {
+const onChange = (code: string) => {
   store.value.activeFile.code = code
-}, 250)
+}
 
 function setItem() {
   localStorage.setItem(SHOW_ERROR_KEY, showMessage.value ? 'true' : 'false')
