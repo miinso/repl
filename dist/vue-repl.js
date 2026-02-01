@@ -285,4 +285,4 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
   }
 });
 
-export { File, _sfc_main as Repl, useStore };
+export { File, _sfc_main as Repl, _sfc_main as default, useStore };

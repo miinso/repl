@@ -10,17 +10,7 @@ declare type __VLS_PublicProps = {
     modelValue?: boolean;
 } & __VLS_Props;
 
-declare class File_2 {
-    filename: string;
-    code: string;
-    hidden: boolean;
-    editorViewState: any;
-    constructor(filename: string, code?: string, hidden?: boolean);
-    get language(): "html" | "css" | "typescript" | "javascript" | "json" | "markdown" | "clike" | "text";
-}
-export { File_2 as File }
-
-export declare const Repl: DefineComponent<__VLS_PublicProps, {
+declare const _default: DefineComponent<__VLS_PublicProps, {
 getValue: () => string;
 setValue: (code: string) => void;
 }, {}, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
@@ -37,6 +27,18 @@ editorOptions: {
 autoSaveText?: string | false;
 };
 }, {}, {}, {}, string, ComponentProvideOptions, false, {}, HTMLDivElement>;
+export { _default as Repl }
+export default _default;
+
+declare class File_2 {
+    filename: string;
+    code: string;
+    hidden: boolean;
+    editorViewState: any;
+    constructor(filename: string, code?: string, hidden?: boolean);
+    get language(): "html" | "css" | "typescript" | "javascript" | "json" | "markdown" | "clike" | "text";
+}
+export { File_2 as File }
 
 export declare interface ReplProps {
     theme?: 'dark' | 'light';
